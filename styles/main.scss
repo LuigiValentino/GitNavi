@@ -1,0 +1,280 @@
+$primary-color: #222748;
+$secondary-color: #f45b69;
+$background-color: #f9f9f9;
+$text-color: #333333;
+$input-bg: #ffffff;
+$input-border-color: #dddddd;
+$button-bg: $primary-color;
+$button-hover-bg: lighten($primary-color, 15%);
+$secondary-btn-bg: $secondary-color;
+$secondary-btn-hover-bg: darken($secondary-color, 10%);
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  img {
+    width: 220px;
+    margin-left: 15px;
+    margin-top: 60px;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.main-content {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-container {
+  width: 100%;
+}
+
+.step {
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.command-section {
+  margin-bottom: 20px;
+
+  h3 {
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+
+    .action-btn {
+      padding: 10px;
+      background-color: $button-bg;
+      color: $background-color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $button-hover-bg;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+form#gitForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+button#generateBtn {
+  width: auto;
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $background-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #464d7a;
+  }
+}
+
+button.secondary-btn {
+  padding: 10px;
+  width: auto;
+  background-color: $secondary-btn-bg;
+  color: $background-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-btn-hover-bg;
+  }
+
+  i {
+    margin-left: 0;
+  }
+}
+
+.export-btn {
+  padding: 10px 15px;
+  background-color: $primary-color;
+  color: $background-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background-color: $button-hover-bg;
+  }
+}
+
+.output-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.output {
+  width: 100%;
+  padding: 15px;
+  background-color: $input-bg;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-family: monospace;
+  color: $text-color;
+  border: 1px solid $input-border-color;
+  margin-bottom: 15px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.copy-btn, .export-btn {
+  width: 48%;
+  padding: 10px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.explanation {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: $input-bg;
+  border-radius: 5px;
+  color: $text-color;
+  border: 1px solid $input-border-color;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: $input-bg;
+  border: 1px solid $input-border-color;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .action-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .output {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .explanation {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  button, input {
+    min-height: 44px;
+  }
+
+  .copy-btn, .export-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}

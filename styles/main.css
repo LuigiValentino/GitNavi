@@ -1,0 +1,249 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header img {
+  width: 220px;
+  margin-left: 15px;
+  margin-top: 60px;
+  position: absolute;
+  left: 0;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-container {
+  width: 100%;
+}
+
+.step {
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.step.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.command-section {
+  margin-bottom: 20px;
+}
+.command-section h3 {
+  color: #222748;
+  margin-bottom: 10px;
+}
+.command-section .actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+.command-section .actions .action-btn {
+  padding: 10px;
+  background-color: #222748;
+  color: #f9f9f9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.command-section .actions .action-btn:hover {
+  background-color: #3b437c;
+}
+
+.hidden {
+  display: none;
+}
+
+form#gitForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+button#generateBtn {
+  width: auto;
+  padding: 10px 20px;
+  background-color: #222748;
+  color: #f9f9f9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+button#generateBtn:hover {
+  background-color: #464d7a;
+}
+
+button.secondary-btn {
+  padding: 10px;
+  width: auto;
+  background-color: #f45b69;
+  color: #f9f9f9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button.secondary-btn:hover {
+  background-color: #f12b3d;
+}
+button.secondary-btn i {
+  margin-left: 0;
+}
+
+.export-btn {
+  padding: 10px 15px;
+  background-color: #222748;
+  color: #f9f9f9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.export-btn i {
+  margin-right: 5px;
+}
+.export-btn:hover {
+  background-color: #3b437c;
+}
+
+.output-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.output {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-family: monospace;
+  color: #333333;
+  border: 1px solid #dddddd;
+  margin-bottom: 15px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.copy-btn, .export-btn {
+  width: 48%;
+  padding: 10px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.explanation {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: #333333;
+  border: 1px solid #dddddd;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+input:focus {
+  border-color: #222748;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .actions {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  .action-btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  .output {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  .explanation {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  button, input {
+    min-height: 44px;
+  }
+  .copy-btn, .export-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+

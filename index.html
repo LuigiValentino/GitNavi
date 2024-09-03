@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitNavi</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="shortcut icon" href="./img/icno.png" type="image/x-icon">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <img src="./img/logo_bg.png" alt="GitNavi Logo" class="logo" id="logo">
+        </header>
+
+        <div class="main-content">
+            <div class="step-container">
+                <div class="step visible" id="step-1">
+                    <h3>Bienvenido a GitNavi</h3>
+                    <p>GitNavi es tu asistente para navegar y ejecutar comandos de Git de manera sencilla y eficiente. Este proyecto está diseñado para facilitar a los desarrolladores el manejo de sus repositorios Git, proporcionando una interfaz intuitiva para ejecutar comandos básicos y avanzados, generando scripts personalizados y brindando explicaciones detalladas sobre cada acción.</p>
+                    <hr>
+                    <h2>1. Selecciona una Acción de Git</h2>
+                    <div class="command-section">
+                        <h3>Comandos Básicos</h3>
+                        <div id="basic-actions" class="actions">
+                            <button class="action-btn" data-action="init">Inicializar Repo</button>
+                            <button class="action-btn" data-action="clone">Clonar Repo</button>
+                            <button class="action-btn" data-action="commit">Commit</button>
+                            <button class="action-btn" data-action="remote">Configurar Remoto</button>
+                            <button class="action-btn" data-action="branch">Crear Rama</button>
+                            <button class="action-btn" data-action="status">Estado del Repo</button>
+                            <button class="action-btn" data-action="log">Historial de Commits</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="command-section">
+                        <h3>Comandos Avanzados</h3>
+                        <div id="advanced-actions" class="actions">
+                            <button class="action-btn" data-action="merge">Fusionar Ramas</button>
+                            <button class="action-btn" data-action="rebase">Rebase</button>
+                            <button class="action-btn" data-action="stash">Stash</button>
+                            <button class="action-btn" data-action="pull">Pull</button>
+                            <button class="action-btn" data-action="push">Push</button>
+                            <button class="action-btn" data-action="fetch">Fetch</button>
+                            <button class="action-btn" data-action="reset">Reset</button>
+                            <button class="action-btn" data-action="diff">Diff</button>
+                            <button class="action-btn" data-action="restore">Restore</button>
+                            <button class="action-btn" data-action="tag">Tag</button>
+                            <button class="action-btn" data-action="cherry-pick">Cherry-pick</button>
+                            <button class="action-btn" data-action="revert">Revert</button>
+                            <button class="action-btn" data-action="rm">Remove File</button>
+                            <button class="action-btn" data-action="mv">Move/Rename File</button>
+                            <button class="action-btn" data-action="bisect">Bisect</button>
+                            <button class="action-btn" data-action="submodule">Submodule</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="step hidden" id="step-2">
+                    <div class="step-header">
+                        <h2>2. Completa los Detalles</h2>
+                        <button id="backBtn" class="btn secondary-btn" type="button"><i class="fas fa-backward-fast"></i></button>
+                    </div>
+                    <hr>
+                    <form id="gitForm">
+                        <div id="inputFields"></div>
+                        <button id="generateBtn" class="btn" type="button">Generar Comandos</button>
+                    </form>
+                </div>
+                <div class="step hidden" id="step-3">
+                    <div class="step-header">
+                        <h2>3. Comandos Generados</h2>
+                        <button id="backBtn2" class="btn secondary-btn" type="button"><i class="fas fa-backward-fast"></i></button>
+                    </div>
+                    <hr>
+                    <div class="output-container">
+                        <h2>Code (.sh)</h2>
+                        <div class="output" id="output"></div>
+                    </div>
+                    <hr>
+                    <h2>Explicación</h2>
+                    <div id="explanation" class="explanation"></div>
+                    <hr>
+                    <div class="action-buttons">
+                        <button id="copyBtn" class="btn copy-btn">
+                            <i class="fas fa-copy"></i> Copiar Comandos
+                        </button>
+                        <button id="exportBtn" class="btn export-btn">
+                            <i class="fas fa-file-export"></i> Exportar a Script (.sh)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 GitNavi - <a href="https://github.com/LuigiValentino">Luigi Adducci</a></p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
